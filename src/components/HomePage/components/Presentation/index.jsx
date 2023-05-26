@@ -5,7 +5,7 @@ import { homePageText } from '../../../../pageData/personalIntroduction';
 const Presentation = () => {
   return (
     <PresentationContainer>
-      <Title>Presentación</Title>
+      <Title>Presentción</Title>
       <Text>{homePageText.introduction}</Text>
     </PresentationContainer>
   );
