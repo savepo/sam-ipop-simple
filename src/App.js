@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './components/HomePage';
+import AboutMePage from './components/AboutMePage';
+import ProfessionalProjectionPage from './components/ProfessionalProjectionPage';
+import FuturePage from './components/FuturePage';
+import Footer from './components/Footer';
+import { MainContainer } from './styles';
+// Importa otros componentes de página según sea necesario
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <MainContainer>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/cv" element={<AboutMePage />} />
+          <Route path="/proyeccion-profesional" element={<ProfessionalProjectionPage />} /> 
+          <Route path="/futuro" element={<FuturePage />} />
+        </Routes>        
+      </MainContainer>
+      <Footer />
+    </Router>
   );
 }
 
